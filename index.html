@@ -41,7 +41,7 @@ var rq = new XMLHttpRequest();
 rq.onload = function() {
   particlesJS("particles-js", JSON.parse(rq.responseText));
 };
-rq.open("GET", "static/particlesjs-config.json")
+rq.open("GET", "data/particlesjs-config.json")
 rq.send(null)
 
 //load social media links
@@ -75,7 +75,7 @@ console.log(elements)
     document.getElementById(key).appendChild(bimage);
   };
 };
-rr.open("GET", "static/thing.json")
+rr.open("GET", "data/thing.json")
 rr.send(null)
 
 </script>
