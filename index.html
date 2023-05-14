@@ -24,13 +24,18 @@ var dark = true
 ::selection {
   color: #7851a9;
   background: white;
-}</style>
+}
+
+.filterwhite{
+    filter: invert(95%);
+}
+</style>
   </head>
   <body style="background-color: white;">
     <h1 id="bigtext" style="margin-top: 128px; font-size: 96px; text-align: center;">noktu.site</h1>
 
     <div style="text-align: center;" id="buttons"></div>
-    <p id="dumb" style="text-align: center;">hello</p>
+    <p id="dumb" style="text-align: center; margin-top: .67em;">hello</p>
 <div id="particles-js" style="position: absolute; top:0; bottom:0; left:0; right:0; overflow:hidden; z-index:-1;"></div>
 
 
@@ -60,16 +65,17 @@ console.log(elements)
     url.href = value.url;
     url.id = key + "img";
     const button = document.createElement("button");
-    if (dark == true) {
-          button.className = "btn btn-dark";
-    } else {
-      button.className = "btn btn-light";
-    };
     button.style = "height: 64px; width: 64px; margin: 4px;";
     button.id = key;
 
     const bimage = document.createElement("img");
         bimage.src = value.logo;
+        if (dark == true) {
+              button.className = "btn btn-dark";
+              bimage.className = "filterwhite";
+        } else {
+          button.className = "btn btn-light";
+        };
     document.getElementById('buttons').appendChild(url);
     document.getElementById(url.id).appendChild(button);
     document.getElementById(key).appendChild(bimage);
