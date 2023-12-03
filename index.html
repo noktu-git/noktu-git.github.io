@@ -85,5 +85,18 @@ rr.open("GET", "data/thing.json")
 rr.send(null)
 
 </script>
+<script>
+//fit text onto mobile screens
+function reportWindowSize() {
+  if (window.innerWidth < 412) {
+  document.getElementById("bigtext").style.fontSize = window.innerWidth/8 + "px"; 
+  } else if (document.getElementById("bigtext").style.fontSize != "96px") {
+  document.getElementById("bigtext").style.fontSize = "96px"
+  }
+}
+
+window.onresize = reportWindowSize;
+
+</script>
 </body>
 </html>
