@@ -86,9 +86,12 @@ rr.send(null)
 
 </script>
 <script>
-//fit text onto mobile screens
+//fit text onto screen
+  if (screen.width < 412 ) {
+  document.getElementById("bigtext").style.fontSize = screen.width/8 + "px"; 
+  }
 function reportWindowSize() {
-  if (window.innerWidth < 412) {
+  if (window.innerWidth < 412 ) {
   document.getElementById("bigtext").style.fontSize = window.innerWidth/8 + "px"; 
   } else if (document.getElementById("bigtext").style.fontSize != "96px") {
   document.getElementById("bigtext").style.fontSize = "96px"
